@@ -3,7 +3,7 @@ window.stream = {
 	"max_id": undefined,
 	
 	"more":	function getNewTweets(callback)	{
-				var url = "https://search.twitter.com/search.json?q=javascript&result_type=mixed";
+				var url = "https://search.twitter.com/search.json?q=javascript&result_type=recent&rpp=1";
 				if(stream.max_id == undefined)	{
 					url += "?";
 				}
@@ -19,7 +19,7 @@ window.stream = {
 			},
 
 	"callback":	function streamCallback(data)	{
-					console.log(data);
+					console.log(JSON.stringify(data));
 				}
 }
 
